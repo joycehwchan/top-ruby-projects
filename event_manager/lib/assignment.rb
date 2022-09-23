@@ -1,5 +1,4 @@
 require 'csv'
-require 'date'
 require 'time'
 
 count_days_arr = []
@@ -50,7 +49,6 @@ def peak_hours(hours_arr)
   return peak_hour[0]
 end
 
-
 # =========================================
 
 contents = CSV.open(
@@ -74,6 +72,5 @@ contents.each do |row|
     # puts "Name: #{name}, Tel: #{tel}, Reg date: #{date}, Reg weekday: #{weekday}, Reg time: #{time}, Reg hour: #{hour}"
 end
 
-puts "\n"
 puts "Peak registration hours: #{peak_hours(count_hours_arr)}" 
 puts "Peak registration days: #{peak_days(count_days_arr)}" 
