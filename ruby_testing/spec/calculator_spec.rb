@@ -36,4 +36,11 @@ describe Calculator do
       expect(calculator.multiply(2, 5, 7)).to eq(70)
     end
   end
+
+  describe "#divide" do
+    it "returns the value of first number divided by second number" do
+      calculator = Calculator.new
+      expect(calculator.divide(10, 5)).to eq(2)
+    end
+  end
 end

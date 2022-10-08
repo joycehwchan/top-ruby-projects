@@ -1,5 +1,4 @@
 class Calculator
-
   def sum(*x)
     x.sum
   end
@@ -12,4 +11,7 @@ class Calculator
     x.reduce(:*)
   end
 
+  def divide(x, y)
+    x / y
+  end
 end
