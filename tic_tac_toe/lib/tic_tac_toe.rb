@@ -81,7 +81,6 @@ class TicTacToe
 
   def play
     player = @p1
-    standby_player = @p2
     # start game
     until @game_over
       display_board(board)
