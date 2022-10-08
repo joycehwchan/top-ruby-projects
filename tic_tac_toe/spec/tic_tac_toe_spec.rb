@@ -1,1 +1,1 @@
-require './lib/tic_tac_toe.rb'
+require './lib/interface'

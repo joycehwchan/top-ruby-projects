@@ -1,72 +1,5 @@
 # Read: https://learn.co/lessons/tic-tac-toe-rb
 
-class Game
-  def initialize
-    display_title
-    set_up_players
-    TicTacToe.new(@p1,@p2)
-  end
-
-  private
-
-  def set_up_players
-    @p1 = Player.new(1)
-    @p2 = Player.new(2)
-    ready_to_start
-  end
-
-  def display_title
-    print "\e[2J\e[f"
-    puts "\n"
-    puts '     ----Tic Tac Toe----'
-    puts "\n"
-    puts '          O | X | O '
-    puts '         ---+---+---'
-    puts '          O | O | X '
-    puts '         ---+---+---'
-    puts '          X | X | O '
-    puts "\n"
-    puts '     -------------------'
-    puts "\n"
-  end
-
-  def ready_to_start
-    sleep(0.2)
-    puts 'Are you ready? Press Enter to start!'
-    gets
-    sleep(0.1)
-  end
-end
-
-class Player
-  attr_accessor :name, :move
-
-  def initialize(player_number)
-    set_name(player_number)
-    set_move(player_number)
-  end
-
-  private
-
-  def set_name(player_number)
-    print "Player #{player_number}, what is your name?  "
-    @name = gets.chomp.capitalize
-  end
-
-  def set_move(player_number)
-    case player_number
-    when 1
-      @move = 'O'
-      puts "#{name}, you will be playing: " + @move
-    when 2
-      @move = 'X'
-      puts "#{name}, you will be playing: " + @move
-    end
-    puts "\n"
-    sleep(0.2)
-  end
-end
-
 class TicTacToe
   attr_accessor :board
 
@@ -92,10 +25,8 @@ class TicTacToe
       if valid_move?
         board[@index] = player.move
         display_board(board)
-
         check_winner(player, board)
         check_draw(board)
-
         # Switch player at next turn
         player == @p1 ? player = @p2 : player = @p1
       else
@@ -223,5 +154,3 @@ class TicTacToe
     @board = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
   end
 end
-
-Game.new
